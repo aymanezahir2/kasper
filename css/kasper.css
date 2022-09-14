@@ -213,7 +213,7 @@ header .container::before{
 }
 
 /*=========================
-=======end header==========
+=======end header==========fgdf
 ===========================*/
 
 
@@ -364,7 +364,30 @@ header .container::before{
 =======Start design========
 ===========================*/
 
-
+.design{
+  background-image: url(../image/design-features.jpg);
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 600px;
+  padding: var(--section-padding) 0;
+}
+.design::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+.design .txt,.design .image{
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
 
 /*=========================
 =======end design========
