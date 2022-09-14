@@ -1,0 +1,371 @@
+/* Start Variables */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 100px;
+  --test: #000 1px solid;
+}
+/* End Variables */
+/*=========================
+=====start globale rule=====
+===========================*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 1500px;
+}
+section{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/*=========================
+=======end globale rule========
+===========================*/
+
+
+
+/*=========================
+=======Start Components========
+===========================*/
+.main-header{
+  text-align: center;
+}
+.main-header h2{
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: normal;
+  position: relative;
+  padding-bottom: 20px;
+}
+.main-header h2::after,.main-header h2::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main-header h2::after{
+  width: 20px;
+  height: 20px;
+  border: var(--test);
+  border-radius: 50%;
+  background-color: #fff;
+}
+.main-header h2::before{
+  height: 1px;
+  width: 100px;
+  
+  background-color: #000;
+  margin-bottom: 10px;
+}
+.main-header p{
+  color: #777;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-top: 20px;
+  width: 550px;
+  margin: 30px auto 100px;
+}
+
+
+/*=========================
+=======End Components========
+===========================*/
+
+/*=========================
+=======Start header========
+===========================*/
+header{    
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+  }
+  header .container{
+    display:flex;
+    min-height: 97px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+ul{
+    list-style: none;
+    display: flex;
+
+}
+
+
+
+.links{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+header .container .links ul li a{
+    text-decoration: none;
+    color:inherit;
+    text-transform: capitalize;
+    display: block;
+}
+header .container .links ul li {
+  color: wheat;
+  padding: 40px 10px;
+  position: relative;
+  z-index: 2;
+}
+.icon-search{
+    margin-left: 10px;
+    border-left: 2px white solid;
+}
+.search{
+    padding: 0 15px;
+    font-size: 20px;
+    color: wheat;
+}
+header .container .links ul li.active,
+.container .links ul li:hover {
+  color: var(--main-color);
+  border-bottom: var(--main-color) solid 2px;
+}
+header .container::before{
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: #fff;
+  bottom: 0;
+  width: calc(100% - 30px);
+  left: 15px;
+}
+.menu-bars{
+  color: wheat;
+  font-size: 20px;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+}
+@media (min-width:767px){
+  .menu-bars{
+    display: none;
+  }
+  .container .links ul{
+    display: flex;
+  }
+}
+@media (max-width:767px){
+  .menu-bars{
+    display: block;
+    cursor: pointer;
+  }
+  .container .links ul{
+    display: none;
+    position: absolute;
+    left: 0;
+    padding-left: 15px;
+    top: 97px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+  }
+  .menu-bars:hover +  ul{
+    display: block;
+  }
+  .container .links ul li{
+    width: 100%;
+    padding: 17px 0 !important;
+  }
+
+}
+
+/*=========================
+=======end header==========
+===========================*/
+
+
+
+/*=========================
+=======Start Landing========
+===========================*/
+
+.landing{
+  background-image: url(../image/landing.jpg);
+  min-height: 100vh;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+.landing .tikets{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 40px;
+  background-color:var(--transparent-color) ;
+}
+.landing .tikets .text{
+  max-width: 500px;
+  color: #fff;
+}
+.landing .tikets .text h2{
+  line-height: 1.6;
+  font-size: 30px;
+  font-weight: 400;
+}
+.landing .tikets .text p{
+  margin-top: 10px;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.filter{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+.filter .right,
+.filter .left{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  margin: 10px;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 20px;
+}
+.filter .right{
+  right: 0;
+}
+.filter .left{
+  left: 0;
+}
+@media (max-width:767px){
+  .landing .tikets {
+    width: 100%;
+  }
+  .filter .right,
+  .filter .left{
+    display: none;
+  }
+}
+.balls{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.balls li{
+  border: 1px white solid;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  border-radius: 50%;
+}
+.balls li.blue{
+  background-color: var(--main-color);
+}
+
+/*=========================
+======end landing==========
+===========================*/
+/* Start Services  */
+.services .content{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(450px,1fr));
+  gap: 40px 60px;
+  margin-top: 80px;
+}
+
+.services .content  .ser{
+  display: flex;
+
+}
+.services .content  .ser i{
+  margin-right: 50px;
+}
+
+.services .content .ser .text h2{
+  font-size: 16px;
+  color: var(--main-color);
+  margin-bottom: 30px ;
+}
+.services .content  .ser .text p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.6;
+}
+
+@media (max-width:767px) {
+  .services .content .ser{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    
+    text-align: center;
+  }
+  .services .content .ser .text{
+    text-align: center;
+  }
+  .services .content  .ser i{
+    margin: 0 0 30px ;
+  }
+}
+
+
+/*=========================
+=======end Services=======
+===========================*/
+
+
+/*=========================
+=======Start design========
+===========================*/
+
+
+
+/*=========================
+=======end design========
+===========================*/
