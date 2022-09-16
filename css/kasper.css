@@ -13,17 +13,18 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  max-width: 100%;
   margin: 0;
   padding: 0;
 }
 html {
   scroll-behavior: smooth;
+  height: 5000px;
 }
 body {
   font-family: "Open Sans", sans-serif;
-  height: 1500px;
 }
-section{
+section {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
@@ -56,51 +57,67 @@ section{
 =======end globale rule========
 ===========================*/
 
-
-
 /*=========================
 =======Start Components========
 ===========================*/
-.main-header{
+.main-header {
   text-align: center;
 }
-.main-header h2{
+.main-header h2 {
   font-size: 40px;
   text-transform: uppercase;
   font-weight: normal;
   position: relative;
   padding-bottom: 20px;
 }
-.main-header h2::after,.main-header h2::before{
-  content: '';
+.main-header h2::after,
+.main-header h2::before {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
-.main-header h2::after{
+.main-header h2::after {
   width: 20px;
   height: 20px;
   border: var(--test);
   border-radius: 50%;
   background-color: #fff;
 }
-.main-header h2::before{
+.main-header h2::before {
   height: 1px;
   width: 100px;
-  
   background-color: #000;
   margin-bottom: 10px;
 }
-.main-header p{
+.main-header p {
   color: #777;
   line-height: 1.8;
   font-size: 14px;
-  margin-top: 20px;
+  max-width: 100%;
   width: 550px;
   margin: 30px auto 100px;
 }
 
+/* Start Commet */
+.head {
+  text-align: center;
+}
+.head h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.head p {
+  color: #777;
+  line-height: 2;
+  max-width: 100%;
+  width: 450px;
+  font-size: 14px;
+  margin: auto;
+}
+/* End Commet */
 
 /*=========================
 =======End Components========
@@ -109,39 +126,35 @@ section{
 /*=========================
 =======Start header========
 ===========================*/
-header{    
-    background-color: transparent;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    left: 0;
-  }
-  header .container{
-    display:flex;
-    min-height: 97px;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+header {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  left: 0;
 }
-ul{
-    list-style: none;
-    display: flex;
-
+header .container {
+  display: flex;
+  min-height: 97px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+ul {
+  list-style: none;
+  display: flex;
 }
 
-
-
-.links{
-    display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    align-items: center;
+.links {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
 }
-header .container .links ul li a{
-    text-decoration: none;
-    color:inherit;
-    text-transform: capitalize;
-    display: block;
+header .container .links ul li a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: capitalize;
+  display: block;
 }
 header .container .links ul li {
   color: wheat;
@@ -149,21 +162,21 @@ header .container .links ul li {
   position: relative;
   z-index: 2;
 }
-.icon-search{
-    margin-left: 10px;
-    border-left: 2px white solid;
+.icon-search {
+  margin-left: 10px;
+  border-left: 2px white solid;
 }
-.search{
-    padding: 0 15px;
-    font-size: 20px;
-    color: wheat;
+.search {
+  padding: 0 15px;
+  font-size: 20px;
+  color: wheat;
 }
 header .container .links ul li.active,
 .container .links ul li:hover {
   color: var(--main-color);
   border-bottom: var(--main-color) solid 2px;
 }
-header .container::before{
+header .container::before {
   content: "";
   position: absolute;
   height: 1px;
@@ -172,28 +185,28 @@ header .container::before{
   width: calc(100% - 30px);
   left: 15px;
 }
-.menu-bars{
+.menu-bars {
   color: wheat;
   font-size: 20px;
 }
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
 }
-@media (min-width:767px){
-  .menu-bars{
+@media (min-width: 767px) {
+  .menu-bars {
     display: none;
   }
-  .container .links ul{
+  .container .links ul {
     display: flex;
   }
 }
-@media (max-width:767px){
-  .menu-bars{
+@media (max-width: 767px) {
+  .menu-bars {
     display: block;
     cursor: pointer;
   }
-  .container .links ul{
+  .container .links ul {
     display: none;
     position: absolute;
     left: 0;
@@ -202,34 +215,30 @@ header .container::before{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.61);
   }
-  .menu-bars:hover +  ul{
+  .menu-bars:hover + ul {
     display: block;
   }
-  .container .links ul li{
+  .container .links ul li {
     width: 100%;
     padding: 17px 0 !important;
   }
-
 }
 
 /*=========================
 =======end header==========fgdf
 ===========================*/
 
-
-
 /*=========================
 =======Start Landing========
 ===========================*/
 
-.landing{
+.landing {
   background-image: url(../image/landing.jpg);
   min-height: 100vh;
   background-size: cover;
   position: relative;
-  width: 100%;
 }
-.landing .tikets{
+.landing .tikets {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -237,24 +246,24 @@ header .container::before{
   display: flex;
   justify-content: flex-end;
   padding: 40px;
-  background-color:var(--transparent-color) ;
+  background-color: var(--transparent-color);
 }
-.landing .tikets .text{
+.landing .tikets .text {
   max-width: 500px;
   color: #fff;
 }
-.landing .tikets .text h2{
+.landing .tikets .text h2 {
   line-height: 1.6;
   font-size: 30px;
   font-weight: 400;
 }
-.landing .tikets .text p{
+.landing .tikets .text p {
   margin-top: 10px;
   font-weight: 100;
   font-size: 14px;
   line-height: 1.8;
 }
-.filter{
+.filter {
   position: absolute;
   left: 0;
   top: 0;
@@ -263,7 +272,7 @@ header .container::before{
   background-color: rgba(0, 0, 0, 0.61);
 }
 .filter .right,
-.filter .left{
+.filter .left {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -273,22 +282,22 @@ header .container::before{
   cursor: pointer;
   font-size: 20px;
 }
-.filter .right{
+.filter .right {
   right: 0;
 }
-.filter .left{
+.filter .left {
   left: 0;
 }
-@media (max-width:767px){
+@media (max-width: 767px) {
   .landing .tikets {
     width: 100%;
   }
   .filter .right,
-  .filter .left{
+  .filter .left {
     display: none;
   }
 }
-.balls{
+.balls {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -296,75 +305,77 @@ header .container::before{
   left: 50%;
   transform: translateX(-50%);
 }
-.balls li{
+.balls li,
+.bullets li {
   border: 1px white solid;
   width: 20px;
   height: 20px;
-  margin: 10px;
+  margin: 5px;
   border-radius: 50%;
 }
-.balls li.blue{
+.balls li.blue,
+.bullets li.blue {
   background-color: var(--main-color);
+}
+.bullets li {
+  border: 1px black solid;
 }
 
 /*=========================
 ======end landing==========
 ===========================*/
 /* Start Services  */
-.services .content{
-  display: grid;
-  grid-template-columns: repeat(auto-fill , minmax(450px,1fr));
-  gap: 40px 60px;
-  margin-top: 80px;
+
+@media (min-width: 768px) {
+  .services .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 40px 60px;
+    margin-top: 80px;
+  }
 }
 
-.services .content  .ser{
+.services .content .ser {
   display: flex;
-
 }
-.services .content  .ser i{
+.services .content .ser i {
   margin-right: 50px;
 }
 
-.services .content .ser .text h2{
+.services .content .ser .text h2 {
   font-size: 16px;
   color: var(--main-color);
-  margin-bottom: 30px ;
+  margin-bottom: 30px;
 }
-.services .content  .ser .text p{
-    font-size: 14px;
-    font-weight: 400;
-    color: #777;
-    line-height: 1.6;
+.services .content .ser .text p {
+  color: #777;
+  line-height: 2;
 }
 
-@media (max-width:767px) {
-  .services .content .ser{
+@media (max-width: 767px) {
+  .services .content .ser {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    
+    margin-bottom: 30px;
     text-align: center;
   }
-  .services .content .ser .text{
+  .services .content .ser .text {
     text-align: center;
   }
-  .services .content  .ser i{
-    margin: 0 0 30px ;
+  .services .content .ser i {
+    margin: 0 0 30px;
   }
 }
-
 
 /*=========================
 =======end Services=======
 ===========================*/
 
-
 /*=========================
 =======Start design========
 ===========================*/
 
-.design{
+.design {
   background-image: url(../image/design-features.jpg);
   background-size: cover;
   overflow: hidden;
@@ -374,8 +385,8 @@ header .container::before{
   height: 600px;
   padding: var(--section-padding) 0;
 }
-.design::before{
-  content: '';
+.design::before {
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -383,12 +394,583 @@ header .container::before{
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.61);
 }
-.design .txt,.design .image{
+.design .txt,
+.design .image {
   flex: 1;
   position: relative;
   z-index: 2;
 }
-
+.design .image {
+  text-align: center;
+}
+.design .image img {
+  position: relative;
+  bottom: -150px;
+}
+.design .txt {
+  background-color: var(--transparent-color);
+  color: #fff;
+  padding: 50px;
+  height: max-content;
+}
+.design .txt h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.design .txt ul {
+  flex-direction: column;
+}
+.design .txt ul li {
+  padding: 15px 0;
+}
+.design .txt ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f108";
+  font-weight: 900;
+  margin-right: 20px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+  }
+}
 /*=========================
 =======end design========
 ===========================*/
+
+/*=========================
+=======Start Portfolio=====
+===========================*/
+ul.buttom {
+  display: flex;
+  justify-content: center;
+}
+.portfolio .buttom li {
+  padding: 5px 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.portfolio .buttom li.on,
+.portfolio .buttom li:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.portfolio .photo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+}
+.portfolio .photo .col {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio .photo .col .img {
+  position: relative;
+  min-width: 200px;
+  width: 25%;
+  overflow: hidden;
+}
+.portfolio .photo .img img {
+  width: 100%;
+  transition: 0.7s all;
+}
+.portfolio .photo .img .image-text {
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  height: 0px;
+  transition: 0.3s all;
+}
+.portfolio .photo .img .image-text h3 {
+  font-weight: normal;
+  margin: 5px 0;
+}
+.portfolio .photo .img .image-text p {
+  color: #777;
+}
+.portfolio .photo .col .img img:hover {
+  transform: rotate(3deg) scale(1.1);
+}
+.portfolio .photo .col .img img:hover + div {
+  height: 77px;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  .portfolio .photo .col .img {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .portfolio .photo .col .img {
+    width: 100%;
+  }
+}
+.portfolio .btn {
+  text-align: center;
+  margin-top: 30px;
+}
+.portfolio .btn button {
+  padding: 8px 16px;
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  text-transform: uppercase;
+  font-weight: normal;
+  cursor: pointer;
+}
+.video {
+  margin-top: 50px;
+  max-width: 100%;
+  position: relative;
+}
+.video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+.video video {
+  max-width: 100%;
+}
+.video .text-video {
+  z-index: 6;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--transparent-color);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+}
+.video .text-video h2 {
+  font-weight: normal;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.video .text-video p {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+.video .text-video button {
+  padding: 8px 16px;
+  background-color: black;
+  color: #fff;
+  margin-top: 20px;
+  border: none;
+  text-transform: uppercase;
+}
+/*=========================
+=======End Portfilio=======
+===========================*/
+/*=========================
+=======Start about========
+===========================*/
+section.about {
+  padding: 0;
+  text-align: center;
+}
+
+.about img {
+  max-width: 100%;
+  position: relative;
+  bottom: -120px;
+  margin-top: -120px;
+}
+.state {
+  background-image: url(../image/stats.png);
+  width: 100%;
+  background-size: cover;
+  position: relative;
+  padding: 50px;
+  text-align: center;
+}
+.state::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.61);
+}
+.state .container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
+.state .container .box {
+  background-color: var(--transparent-color);
+  padding: 50px;
+  color: white;
+}
+
+.state .container .box i {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto 30px;
+}
+.state .container .box h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.state .container .box p {
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+@media (max-width: 997px) {
+  .state .container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 997px) {
+  .state .container .box {
+    flex-basis: 25%;
+  }
+}
+@media (max-width: 767px) {
+  .state .container .box {
+    flex-basis: 100%;
+  }
+}
+
+/* Start Comments */
+.comment {
+  padding-top: 50px;
+}
+.comment .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.skills,
+.testimonials {
+  flex-basis: 45%;
+}
+.quotes {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.quotes .box {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.quotes .image {
+  flex-basis: 70px;
+  margin-right: 30px;
+}
+.quotes .image img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.quotes .box .content-quotes p {
+  line-height: 1.6;
+}
+.quotes .box .content-quotes h5 {
+  font-weight: normal;
+  text-align: right;
+  font-size: 14px;
+  color: #777;
+}
+.quotes .box .content-quotes hr {
+  margin-top: 10px;
+}
+
+/* end Comments */
+/*Start Skills*/
+
+.our-skills {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+.our-skills .column {
+  margin: 10px 0;
+}
+.our-skills .column h4 {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.our-skills .pourcentage {
+  height: 25px;
+  background-color: #ccc;
+}
+.our-skills .pourcentage span {
+  background-color: var(--main-color);
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.our-skills .pourcentage span::after {
+  position: absolute;
+  right: -17px;
+  background-color: #000;
+  color: #fff;
+  top: -45px;
+  padding: 5px;
+  border-radius: 3px;
+}
+.our-skills .pourcentage .a::after {
+  content: "90%";
+}
+.our-skills .pourcentage .h::after {
+  content: "85%";
+}
+.our-skills .pourcentage .j::after {
+  content: "80%";
+}
+.our-skills .pourcentage .p::after {
+  content: "90%";
+}
+.our-skills .pourcentage span::before {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: black transparent transparent transparent;
+  right: -8px;
+  top: -15px;
+}
+.our-skills .pourcentage .a {
+  width: 90%;
+}
+.our-skills .pourcentage .h {
+  width: 85%;
+}
+.our-skills .pourcentage .j {
+  width: 80%;
+}
+.our-skills .pourcentage .p {
+  width: 90%;
+}
+
+@media (max-width: 969px) {
+  .skills,
+  .testimonials {
+    flex-basis: 90%;
+    margin-bottom: 30px;
+  }
+  .comment .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .our-skills .pourcentage {
+    width: a;
+  }
+}
+.bullets {
+  display: flex;
+  justify-content: center;
+}
+/*End Skills*/
+/* Start Quotes */
+.out {
+  background-color: black;
+  background-image: url(../image/quote.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.out::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+}
+.out .text {
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.out .text q {
+  font-weight: normal;
+  width: 600px;
+  margin: auto;
+  max-width: 100%;
+  font-size: 25px;
+  display: block;
+}
+.out .text p {
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+/* end Quotes */
+/*=========================
+=======End about========
+===========================*/
+/*=========================
+=======Start Pricing========
+===========================*/
+.pricing .prix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.pricing .prix .box {
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20%;
+}
+.pricing .prix .box .number {
+  padding: 40px 20px;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+  width: 100%;
+  text-align: center;
+}
+.pricing .prix .box .number h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.pricing .prix .box .number h1 {
+  font-size: 60px;
+  position: relative;
+}
+.pricing .prix .box .number h1::before {
+  content: "$";
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+}
+
+.pricing .prix .box .number h1::after {
+  content: "/Mo";
+  position: relative;
+  right: -15px;
+  font-size: 20px;
+  bottom: 9px;
+}
+.pricing .prix .box .feature {
+  text-align: center;
+  padding: 0 20px;
+}
+.pricing .prix .box .feature p {
+  text-transform: capitalize;
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+.pricing .prix .box .feature p:last-child {
+  border: none;
+}
+.pricing .prix .box .buy {
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 1px black solid;
+  width: 100%;
+}
+.pricing .prix .box .buy button {
+  padding: 20px;
+  text-transform: capitalize;
+  border: 1px black solid;
+  cursor: pointer;
+}
+@media (max-width: 969px) {
+  .pricing .prix .box {
+    flex-basis: 40%;
+    margin: 20px 0;
+  }
+}
+@media (max-width: 572px) {
+  .pricing .prix .box {
+    flex-basis: 100%;
+    margin: 20px 0;
+  }
+}
+.co{
+  margin-top: 40px;
+  text-align: center;
+}
+.co a{
+  text-decoration: none;
+  color: #fff;
+  margin-top: 136px;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  text-transform: capitalize;
+  display: block;
+  width: max-content;
+  margin: 10px auto;
+}
+
+
+/*=========================
+=======End Pricing========
+===========================*/
+/*Start Subscrib*/
+.subscrib{
+  padding: var(--section-padding) 0;
+  background-image: url(../image/subscribe.jpg);
+  color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.subscrib::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+}
+.subscrib .sub{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.subscrib .sub input{
+  padding: 20px 20px 20px 60px;
+  outline: none;
+  border: white 3px solid;
+  background-color: transparent;
+  position: relative;
+  width: calc(100% - 137px);
+  text-transform: capitalize;
+}
+.subscrib .sub input::placeholder{
+  color: white;
+}
+.subscrib .sub i{
+  position: relative;
+  left: 10px;
+}
+.subscrib .sub button{
+  position: relative;
+  right: 75px;
+  padding: 19px 8px;
+  border: 2px white solid;
+  color: #fff;
+  background-color: var(--main-color);
+
+}
+/*End Subscrib*/
